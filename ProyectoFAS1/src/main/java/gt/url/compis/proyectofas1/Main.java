@@ -24,9 +24,6 @@ public class Main {
      */
     public static void main(String[] args) {
         try {
-            //            Lexico lex = new Lexico(new FileReader("src/main/java/gt/url/compis/proyectofas1/codigo"));
-//            InputStreamReader input = new InputStreamReader(new FileInputStream("codigo.txt"));
-
             Lexico lex = new Lexico(new InputStreamReader(new FileInputStream("codigo.txt")));
             lex.yylex();
         } catch (FileNotFoundException ex) {
