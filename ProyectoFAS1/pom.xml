@@ -21,20 +21,18 @@
                         <goals>
                             <goal>generate</goal>
                         </goals>   
-                        <!--configuration>
+                        <configuration>
                             <lexDefinitions>
-                                <lexDefinition>src/main/java/gt/url/compis/ansintactico/flexfiles/ejemplo.flex</lexDefinition>
+                                <lexDefinition>src/main/java/gt/url/compis/proyectofas1/flex/lexico.flex</lexDefinition>
                             </lexDefinitions>
                             <outputDirectory>src/main/java</outputDirectory>
                             <verbose>true</verbose>
-                        </configuration-->                     
+                        </configuration>                     
                     </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
-
-   
     <dependencies>
         <dependency>
             <groupId>de.jflex</groupId>
