@@ -5,6 +5,7 @@
  */
 package gt.url.compis.proyectofas1;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -12,6 +13,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.io.Reader;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -50,8 +52,27 @@ public class Main {
             writer = new PrintWriter(archivo);
             writer.print(texto);
             writer.close();
-            Lexico lex = new Lexico(new InputStreamReader(new FileInputStream("codigo.loop")));
-            lex.yylex();
+            Lexico lexer = new Lexico(new InputStreamReader(new FileInputStream("codigo.loop")));
+            String resultado = "";
+            while (true) {
+                Tokens tokens = lexer.yylex();
+                if (tokens == null) {
+                    resultado += "FIN";
+                    System.out.println(resultado);
+                    return;
+                }
+                switch (tokens) {
+                    case ERROR:
+                        resultado += "Simbolo no definido\n";
+                        break;
+                    case Identificador: case Numero: case Reservadas: case Simbolo: case Final_Linea:
+                        resultado += "Encontre un/a:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+                    default:
+                        resultado += "Encontre un/a:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+                }
+            }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
