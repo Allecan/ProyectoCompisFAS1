@@ -1,4 +1,12 @@
 
-cc++
-c--
+clase HolaMundo
+propiedades privadas:
+entero a
+cadena nombre
+Impar i
+metodos publicos :
+constructor()
+i = nuevo Impar ()
+a = 0
+nombre = ""
 end

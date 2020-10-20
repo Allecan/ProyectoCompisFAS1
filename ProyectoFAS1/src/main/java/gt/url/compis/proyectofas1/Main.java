@@ -30,7 +30,7 @@ public class Main {
         String input = "";
         String texto = "";
         String fin = "end";
-        System.out.println("Escriba: ");
+        System.out.println("Escriba su codigo: ");
 
         System.out.println(input);
         while (input != "end") {
