@@ -1,21 +1,5 @@
+ // hola mundo
 
-;
-1
-324
-;
-;
- // funci ´o n sumar original
-2 entero sumar ( entero a , entero b )
-3 devolver a + b
+ devolver a + b;
 4
-5 // funci ´o n sumar polim ´o rfica para tipos reales
-6 real sumar ( real a , real b )
-7 devolver a + b
-8
-9 // la declaraci ´o n de esta funci ´o n genera
-10 // problemas , ya que solo cambia en el
-11 // tipo devuelto .
-12 real sumar ( entero a , entero b )
-13 devolver a + b
 .
-end

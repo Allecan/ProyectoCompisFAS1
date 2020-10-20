@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 package gt.url.compis.proyectofas1;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -18,16 +18,46 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author allec
- */
-public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
+
+  
+
+public class Main {
+    
+    public static void Escribir(String texto) throws IOException {
+
+        File archivo;
+        FileWriter escribir;
+        PrintWriter linea;
+        archivo = new File("codigo.txt");
+        if (!archivo.exists()) {
+            try {
+                archivo.createNewFile();
+                escribir = new FileWriter(archivo, true);
+                linea = new PrintWriter(escribir);
+                linea.println(texto);
+                linea.close();
+                escribir.close();
+            } catch (Exception e) {
+            }
+
+        } else {
+            try {
+                escribir = new FileWriter(archivo, true);
+                linea = new PrintWriter(escribir);
+                linea.println(texto);
+                linea.close();
+                escribir.close();
+            } catch (Exception e) {
+            }
+
+        }
+    }
+
+  
     public static void main(String[] args) {
+        
+        
         Scanner in = new Scanner(System.in);
         String input = "";
         String texto = "";
@@ -58,6 +88,7 @@ public class Main {
                 Tokens tokens = lexer.yylex();
                 if (tokens == null) {
                     resultado += "FIN";
+                    Escribir(resultado);
                     System.out.println(resultado);
                     return;
                 }

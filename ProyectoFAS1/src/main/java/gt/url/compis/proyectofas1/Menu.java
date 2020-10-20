@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Reader;
@@ -20,16 +21,46 @@ import javax.swing.JFileChooser;
  *
  * @author Charly Ponce
  */
-public class FrmPrincipal extends javax.swing.JFrame {
+public class Menu extends javax.swing.JFrame {
 
     /**
      * Creates new form FrmPrincipal
      */
-    public FrmPrincipal() {
+    public Menu() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
 
+    
+        public void Escribir(String texto) throws IOException {
+
+        File archivo;
+        FileWriter escribir;
+        PrintWriter linea;
+        archivo = new File("codigo.txt");
+        if (!archivo.exists()) {
+            try {
+                archivo.createNewFile();
+                escribir = new FileWriter(archivo, true);
+                linea = new PrintWriter(escribir);
+                linea.println(texto);
+                linea.close();
+                escribir.close();
+            } catch (Exception e) {
+            }
+
+        } else {
+            try {
+                escribir = new FileWriter(archivo, true);
+                linea = new PrintWriter(escribir);
+                linea.println(texto);
+                linea.close();
+                escribir.close();
+            } catch (Exception e) {
+            }
+
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -95,6 +126,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 if (tokens == null) {
                     resultado += "FIN";
                     txtResultado.setText(resultado);
+                    Escribir(resultado);
                     return;
                 }
                 switch (tokens) {
@@ -110,9 +142,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(FrmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(FrmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnAnalizarActionPerformed
 
@@ -133,14 +165,18 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -149,7 +185,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmPrincipal().setVisible(true);
+                new Menu().setVisible(true);
             }
         });
     }
