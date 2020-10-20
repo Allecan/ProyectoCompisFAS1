@@ -1,9 +1,0 @@
-
-clase prueba loop
-	var texto = "gola"
-	if (texto == "adios")
-		decir adios
-	else
-		escriba respuesta
-	end
-end

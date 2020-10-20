@@ -45,22 +45,17 @@ public class Main {
         }
 
         try {
-            File archivo = new File("prueba2a.txt");
+            File archivo = new File("codigo.loop");
             PrintWriter writer;
             writer = new PrintWriter(archivo);
             writer.print(texto);
             writer.close();
+            Lexico lex = new Lexico(new InputStreamReader(new FileInputStream("codigo.loop")));
+            lex.yylex();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-//        try {
-//            Lexico lex = new Lexico(new InputStreamReader(new FileInputStream("codigo.txt")));
-//            lex.yylex();
-//        } catch (FileNotFoundException ex) {
-//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (IOException ex) {
-//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-//        }
     }
 }
