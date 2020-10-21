@@ -5,17 +5,27 @@
  */
 package gt.url.compis.proyectofas1;
 
+import static gt.url.compis.proyectofas1.Main.Escribir;
+import static gt.url.compis.proyectofas1.Main.Escribir2;
+import static gt.url.compis.proyectofas1.Main.convertStringArrayToString;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.Reader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -26,13 +36,71 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form FrmPrincipal
      */
+    
+  
     public Menu() {
+        
         initComponents();
         this.setLocationRelativeTo(null);
     }
 
+    public static String PreguntaSiNo(String strMensaje){
+        int seleccion = JOptionPane.showOptionDialog(
+            null, 
+            strMensaje, 
+            "Seleccione una opción", 
+            JOptionPane.YES_NO_CANCEL_OPTION,
+            JOptionPane.QUESTION_MESSAGE,
+            null,    
+            new Object[] { "Si", "No"},   
+            "Si");
+        
+        if (seleccion != -1)
+            {
+                if((seleccion + 1)==1)
+                    {
+                    return "SI";
+                    }
+                else
+                    {
+                    return "NO";
+                    }
+            }
+    return null;
+    } 
     
         public void Escribir(String texto) throws IOException {
+
+        File archivo;
+        FileWriter escribir;
+        PrintWriter linea;
+        archivo = new File("codigo.txt");
+        if (!archivo.exists()) {
+            try {
+                archivo.createNewFile();
+                escribir = new FileWriter(archivo, true);
+                linea = new PrintWriter(escribir);
+                linea.println(texto);
+                linea.close();
+                escribir.close();
+            } catch (Exception e) {
+            }
+
+        } else {
+            try {
+                escribir = new FileWriter(archivo, true);
+                linea = new PrintWriter(escribir);
+                linea.println(texto);
+                linea.close();
+                escribir.close();
+            } catch (Exception e) {
+            }
+
+        }
+    }
+        
+        
+                public void Escribir2(String texto) throws IOException {
 
         File archivo;
         FileWriter escribir;
@@ -73,11 +141,12 @@ public class Menu extends javax.swing.JFrame {
         btnAnalizar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtResultado = new javax.swing.JTextArea();
+        btnAnalizar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnAnalizar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnAnalizar.setText("Analizar");
+        btnAnalizar.setText("Iniciar Análisis");
         btnAnalizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAnalizarActionPerformed(evt);
@@ -88,65 +157,175 @@ public class Menu extends javax.swing.JFrame {
         txtResultado.setRows(5);
         jScrollPane1.setViewportView(txtResultado);
 
+        btnAnalizar1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnAnalizar1.setText("Mostrar Datos");
+        btnAnalizar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAnalizar1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
-                    .addComponent(btnAnalizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 956, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(168, 168, 168)
+                .addComponent(btnAnalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(95, 95, 95)
+                .addComponent(btnAnalizar1, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAnalizar)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAnalizar1)
+                    .addComponent(btnAnalizar))
+                .addGap(51, 51, 51))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAnalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalizarActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here  
+     
+        
         JFileChooser chooser = new JFileChooser();
         chooser.showOpenDialog(null);
         
+       
+       
+       
+        String ide = "";    //identificador
+        String n = "";      //numero
+        String ps = "";     //palabra reservada
+        String simb = "";   //simbolo
+        String fdl = "";    //eof
+        String cm = "";     //comentario
+        String pl = "";     //palabra
+        String fe = "";     //funcion especial
+        String op = "";     //operador
+        String mr = "";     //metodo reservado
+        String tab = "\t\t\t\t----<<<Inicia Tabla>>>----\n";
+        
+        
+        
+        
+            
+       
+
         try {
-            Reader lector = new BufferedReader(new FileReader(chooser.getSelectedFile()));
+               Reader lector = new BufferedReader(new FileReader(chooser.getSelectedFile()));
             Lexico lexer = new Lexico(lector);
             String resultado = "";
             while (true) {
                 Tokens tokens = lexer.yylex();
                 if (tokens == null) {
                     resultado += "FIN";
-                    txtResultado.setText(resultado);
-                    Escribir(resultado);
+                    tab += "\t->NUMEROS<-\n"+ n + "\n" 
+                            + "\t->PALABRA<-\n"+ pl + "\n" 
+                            + "\t->OPERADOR<-\n"+ op + "\n" 
+                            + "\t->SIMBOLO<-\n"+ simb + "\n" 
+                            + "\t->IDDENTIFICADOR<-\n"+ ide + "\n" 
+                            + "\t->PALABRA RESERVADA<-\n"+ ps + "\n" 
+                            + "\t->FUNCION ESPECIAL<-\n"+ fe + "\n" 
+                            + "\t->METODO RESERVADO<-\n"+ mr + "\n" 
+                            + "\t->COMENTARIOS<-\n\n"+ cm + "\n" 
+                            + "\t->EOF<-\n"+ fdl;
+                    Escribir2(tab);
+                 //   Escribir(resultado);
+                    System.out.println(resultado);
                     return;
                 }
                 switch (tokens) {
                     case ERROR:
                         resultado += "Simbolo no definido\n";
                         break;
-                    case Identificador: case Numero: case Reservadas: case Simbolo: case Final_Linea:
+                    case Identificador:
+                        ide += tokens + ":$ " + lexer.lexeme + "\n";
                         resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
                         break;
+                    case Numero:
+                        n += tokens + ":$ " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+                    case Reservadas:
+                        ps += tokens + ":$ " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+                    case Simbolo:
+                        simb += tokens + ":$ " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+                    case Final_Linea:
+                        fdl += tokens + ":$ " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+                    case Comentario:
+                        cm += tokens + ":$ " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+                    case Palabra:
+                        pl += tokens + ":$ " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+                    case Operador:
+                        op += tokens + ":$ " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+                    case Metodo_Reservado:
+                        mr += tokens + ":$ " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+                    case Funcion_Especial:
+                        fe += tokens + ":$ " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+//                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+//                        break;
                     default:
                         resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
                         break;
                 }
+               
             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+
+    }//GEN-LAST:event_btnAnalizarActionPerformed
+
+    private void btnAnalizar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalizar1ActionPerformed
+       File archivo = new File("codigo.txt");
+        try {
+            BufferedReader leer = new BufferedReader(new FileReader(archivo));
+           try {
+               String linea = leer.readLine();
+               while(linea !=null){
+                   txtResultado.append(linea+"\n");
+                   linea = leer.readLine();
+               }
+           } catch (IOException ex) {
+               Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+           }
+        } catch (FileNotFoundException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_btnAnalizarActionPerformed
+        
+       
+    }//GEN-LAST:event_btnAnalizar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,7 +371,13 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAnalizar;
+    private javax.swing.JButton btnAnalizar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txtResultado;
     // End of variables declaration//GEN-END:variables
+
+
+    
+
+
 }
