@@ -1,0 +1,678 @@
+LEX Encontre:   Reservadas  clase
+LEX Encontre:   Identificador  HolaMundo
+LEX Encontre:   Reservadas  propiedades
+LEX Encontre:   Reservadas  privadas
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  a
+LEX Encontre:   Reservadas  cadena
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Identificador  i
+LEX Encontre:   Reservadas  metodos
+LEX Encontre:   Reservadas  publicos
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Identificador  i
+LEX Encontre:   Operador  =
+LEX Encontre:   Identificador  nuevo
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Identificador  a
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  0.23
+LEX Encontre:   Identificador  b
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  1.2
+LEX Encontre:   Identificador  c
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  99
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Operador  =
+Simbolo no definido
+Simbolo no definido
+FIN
+LEX Encontre:   Reservadas  clase
+LEX Encontre:   Identificador  HolaMundo
+LEX Encontre:   Reservadas  propiedades
+LEX Encontre:   Reservadas  privadas
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  a
+LEX Encontre:   Reservadas  cadena
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Identificador  i
+LEX Encontre:   Reservadas  metodos
+LEX Encontre:   Reservadas  publicos
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Identificador  i
+LEX Encontre:   Operador  =
+LEX Encontre:   Identificador  nuevo
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Identificador  a
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  0.23
+LEX Encontre:   Identificador  b
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  1.2
+LEX Encontre:   Identificador  c
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  99
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Operador  =
+Simbolo no definido
+Simbolo no definido
+FIN
+LEX Encontre:   Reservadas  clase
+LEX Encontre:   Identificador  HolaMundo
+LEX Encontre:   Reservadas  propiedades
+LEX Encontre:   Reservadas  privadas
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  a
+LEX Encontre:   Reservadas  cadena
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Identificador  i
+LEX Encontre:   Reservadas  metodos
+LEX Encontre:   Reservadas  publicos
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Identificador  i
+LEX Encontre:   Operador  =
+LEX Encontre:   Identificador  nuevo
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Identificador  a
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  0.23
+LEX Encontre:   Identificador  b
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  1.2
+LEX Encontre:   Identificador  c
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  99
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Operador  =
+Simbolo no definido
+Simbolo no definido
+FIN
+LEX Encontre:   Reservadas  clase
+LEX Encontre:   Identificador  HolaMundo
+LEX Encontre:   Reservadas  propiedades
+LEX Encontre:   Reservadas  privadas
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  a
+LEX Encontre:   Reservadas  cadena
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Identificador  i
+LEX Encontre:   Reservadas  metodos
+LEX Encontre:   Reservadas  publicos
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Identificador  i
+LEX Encontre:   Operador  =
+LEX Encontre:   Identificador  nuevo
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Identificador  a
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  0.23
+LEX Encontre:   Identificador  b
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  1.2
+LEX Encontre:   Identificador  c
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  99
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Operador  =
+Simbolo no definido
+Simbolo no definido
+FIN
+LEX Encontre:   Reservadas  clase
+LEX Encontre:   Identificador  HolaMundo
+LEX Encontre:   Reservadas  propiedades
+LEX Encontre:   Reservadas  privadas
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  a
+LEX Encontre:   Reservadas  cadena
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Identificador  i
+LEX Encontre:   Reservadas  metodos
+LEX Encontre:   Reservadas  publicos
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Identificador  i
+LEX Encontre:   Operador  =
+LEX Encontre:   Identificador  nuevo
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Identificador  a
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  0.23
+LEX Encontre:   Identificador  b
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  1.2
+LEX Encontre:   Identificador  c
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  99
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Operador  =
+Simbolo no definido
+Simbolo no definido
+FIN
+LEX Encontre:   Reservadas  clase
+LEX Encontre:   Identificador  HolaMundo
+LEX Encontre:   Reservadas  propiedades
+LEX Encontre:   Reservadas  privadas
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  a
+LEX Encontre:   Reservadas  cadena
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Identificador  i
+LEX Encontre:   Reservadas  metodos
+LEX Encontre:   Reservadas  publicos
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Identificador  i
+LEX Encontre:   Operador  =
+LEX Encontre:   Identificador  nuevo
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Identificador  a
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  0.23
+LEX Encontre:   Identificador  b
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  1.2
+LEX Encontre:   Identificador  c
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  99
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Operador  =
+Simbolo no definido
+Simbolo no definido
+FIN
+LEX Encontre:   Reservadas  clase
+LEX Encontre:   Identificador  HolaMundo
+LEX Encontre:   Reservadas  propiedades
+LEX Encontre:   Reservadas  privadas
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  a
+LEX Encontre:   Reservadas  cadena
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Identificador  i
+LEX Encontre:   Reservadas  metodos
+LEX Encontre:   Reservadas  publicos
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Identificador  i
+LEX Encontre:   Operador  =
+LEX Encontre:   Identificador  nuevo
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Identificador  a
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  0.23
+LEX Encontre:   Identificador  b
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  1.2
+LEX Encontre:   Identificador  c
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  99
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Operador  =
+Simbolo no definido
+Simbolo no definido
+FIN
+LEX Encontre:   Reservadas  clase
+LEX Encontre:   Identificador  HolaMundo
+LEX Encontre:   Reservadas  propiedades
+LEX Encontre:   Reservadas  privadas
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  a
+LEX Encontre:   Reservadas  cadena
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Identificador  i
+LEX Encontre:   Reservadas  metodos
+LEX Encontre:   Reservadas  publicos
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Identificador  i
+LEX Encontre:   Operador  =
+LEX Encontre:   Identificador  nuevo
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Identificador  a
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  0.23
+LEX Encontre:   Identificador  b
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  1.2
+LEX Encontre:   Identificador  c
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  99
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Operador  =
+Simbolo no definido
+Simbolo no definido
+FIN
+LEX Encontre:   Reservadas  clase
+LEX Encontre:   Identificador  HolaMundo
+LEX Encontre:   Reservadas  propiedades
+LEX Encontre:   Reservadas  privadas
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  a
+LEX Encontre:   Reservadas  cadena
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Identificador  i
+LEX Encontre:   Reservadas  metodos
+LEX Encontre:   Reservadas  publicos
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Identificador  i
+LEX Encontre:   Operador  =
+LEX Encontre:   Identificador  nuevo
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Identificador  a
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  0.23
+LEX Encontre:   Identificador  b
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  1.2
+LEX Encontre:   Identificador  c
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  99
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Operador  =
+Simbolo no definido
+Simbolo no definido
+FIN
+LEX Encontre:   Reservadas  clase
+LEX Encontre:   Identificador  HolaMundo
+LEX Encontre:   Reservadas  propiedades
+LEX Encontre:   Reservadas  privadas
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  a
+LEX Encontre:   Reservadas  cadena
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Identificador  i
+LEX Encontre:   Reservadas  metodos
+LEX Encontre:   Reservadas  publicos
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Identificador  i
+LEX Encontre:   Operador  =
+LEX Encontre:   Identificador  nuevo
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Identificador  a
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  0.23
+LEX Encontre:   Identificador  b
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  1.2
+LEX Encontre:   Identificador  c
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  99
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Operador  =
+Simbolo no definido
+Simbolo no definido
+FIN
+LEX Encontre:   Reservadas  clase
+LEX Encontre:   Identificador  HolaMundo
+LEX Encontre:   Reservadas  propiedades
+LEX Encontre:   Reservadas  privadas
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  a
+LEX Encontre:   Reservadas  cadena
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Identificador  i
+LEX Encontre:   Reservadas  metodos
+LEX Encontre:   Reservadas  publicos
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Identificador  i
+LEX Encontre:   Operador  =
+LEX Encontre:   Identificador  nuevo
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Identificador  a
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  0.23
+LEX Encontre:   Identificador  b
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  1.2
+LEX Encontre:   Identificador  c
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  99
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Operador  =
+Simbolo no definido
+Simbolo no definido
+FIN
+LEX Encontre:   Reservadas  clase
+LEX Encontre:   Identificador  HolaMundo
+LEX Encontre:   Reservadas  propiedades
+LEX Encontre:   Reservadas  privadas
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  a
+LEX Encontre:   Reservadas  cadena
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Identificador  i
+LEX Encontre:   Reservadas  metodos
+LEX Encontre:   Reservadas  publicos
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Identificador  i
+LEX Encontre:   Operador  =
+LEX Encontre:   Identificador  nuevo
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Identificador  a
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  0.23
+LEX Encontre:   Identificador  b
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  1.2
+LEX Encontre:   Identificador  c
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  99
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Operador  =
+Simbolo no definido
+Simbolo no definido
+FIN
+LEX Encontre:   Reservadas  clase
+LEX Encontre:   Identificador  HolaMundo
+LEX Encontre:   Reservadas  propiedades
+LEX Encontre:   Reservadas  privadas
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  a
+LEX Encontre:   Reservadas  cadena
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Identificador  i
+LEX Encontre:   Reservadas  metodos
+LEX Encontre:   Reservadas  publicos
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Identificador  i
+LEX Encontre:   Operador  =
+LEX Encontre:   Identificador  nuevo
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Identificador  a
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  0.23
+LEX Encontre:   Identificador  b
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  1.2
+LEX Encontre:   Identificador  c
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  99
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Operador  =
+Simbolo no definido
+Simbolo no definido
+FIN
+LEX Encontre:   Reservadas  clase
+LEX Encontre:   Identificador  HolaMundo
+LEX Encontre:   Reservadas  propiedades
+LEX Encontre:   Reservadas  privadas
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  a
+LEX Encontre:   Reservadas  cadena
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Identificador  i
+LEX Encontre:   Reservadas  metodos
+LEX Encontre:   Reservadas  publicos
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Identificador  i
+LEX Encontre:   Operador  =
+LEX Encontre:   Identificador  nuevo
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Identificador  a
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  0.23
+LEX Encontre:   Identificador  b
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  1.2
+LEX Encontre:   Identificador  c
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  99
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Operador  =
+Simbolo no definido
+Simbolo no definido
+FIN
+LEX Encontre:   Reservadas  clase
+LEX Encontre:   Identificador  HolaMundo
+LEX Encontre:   Reservadas  propiedades
+LEX Encontre:   Reservadas  privadas
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  a
+LEX Encontre:   Reservadas  cadena
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Identificador  i
+LEX Encontre:   Reservadas  metodos
+LEX Encontre:   Reservadas  publicos
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Identificador  i
+LEX Encontre:   Operador  =
+LEX Encontre:   Identificador  nuevo
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Identificador  a
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  0.23
+LEX Encontre:   Identificador  b
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  1.2
+LEX Encontre:   Identificador  c
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  99
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Operador  =
+Simbolo no definido
+Simbolo no definido
+FIN
+LEX Encontre:   Reservadas  clase
+LEX Encontre:   Identificador  HolaMundo
+LEX Encontre:   Reservadas  propiedades
+LEX Encontre:   Reservadas  privadas
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  a
+LEX Encontre:   Reservadas  cadena
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Identificador  i
+LEX Encontre:   Reservadas  metodos
+LEX Encontre:   Reservadas  publicos
+LEX Encontre:   Simbolo  :
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Identificador  i
+LEX Encontre:   Operador  =
+LEX Encontre:   Identificador  nuevo
+LEX Encontre:   Identificador  Impar
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Identificador  a
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  0.23
+LEX Encontre:   Identificador  b
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  1.2
+LEX Encontre:   Identificador  c
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  99
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Operador  =
+Simbolo no definido
+Simbolo no definido
+FIN
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  inicio
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Reservadas  escribir
+Simbolo no definido
+LEX Encontre:   Identificador  escriba
+LEX Encontre:   Identificador  su
+LEX Encontre:   Identificador  nombre
+Simbolo no definido
+LEX Encontre:   Comentario  // se guarda una cadena de texto en la variable nombre
+
+LEX Encontre:   Identificador  casa
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  10
+LEX Encontre:   Identificador  cese
+LEX Encontre:   Operador  +
+LEX Encontre:   Identificador  uno
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Reservadas  leer
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Final_Linea  ;
+FIN
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  inicio
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Reservadas  escribir
+Simbolo no definido
+LEX Encontre:   Identificador  escriba
+LEX Encontre:   Identificador  su
+LEX Encontre:   Identificador  nombre
+Simbolo no definido
+LEX Encontre:   Comentario  // se guarda una cadena de texto en la variable nombre
+
+LEX Encontre:   Identificador  casa
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  10
+LEX Encontre:   Identificador  cese
+LEX Encontre:   Operador  +
+LEX Encontre:   Identificador  uno
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Reservadas  leer
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Final_Linea  ;
+FIN
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  inicio
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Reservadas  escribir
+Simbolo no definido
+LEX Encontre:   Identificador  escriba
+LEX Encontre:   Identificador  su
+LEX Encontre:   Identificador  nombre
+Simbolo no definido
+LEX Encontre:   Comentario  // se guarda una cadena de texto en la variable nombre
+
+LEX Encontre:   Identificador  casa
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  10
+LEX Encontre:   Identificador  cese
+LEX Encontre:   Operador  +
+LEX Encontre:   Identificador  uno
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Reservadas  leer
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Final_Linea  ;
+FIN
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  inicio
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Reservadas  escribir
+Simbolo no definido
+LEX Encontre:   Identificador  escriba
+LEX Encontre:   Identificador  su
+LEX Encontre:   Identificador  nombre
+Simbolo no definido
+LEX Encontre:   Comentario  // se guarda una cadena de texto en la variable nombre
+
+LEX Encontre:   Identificador  casa
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  10
+LEX Encontre:   Identificador  cese
+LEX Encontre:   Operador  +
+LEX Encontre:   Identificador  uno
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Reservadas  leer
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Final_Linea  ;
+FIN
+LEX Encontre:   Palabra  "palabra"
+FIN
+Simbolo no definido
+LEX Encontre:   Identificador  palbra
+LEX Encontre:   Identificador  hola
+Simbolo no definido
+FIN
+LEX Encontre:   Reservadas  entero
+LEX Encontre:   Identificador  inicio
+LEX Encontre:   Simbolo  (
+LEX Encontre:   Simbolo  )
+LEX Encontre:   Reservadas  escribir
+LEX Encontre:   Palabra  "escriba"
+LEX Encontre:   Comentario  // se guarda una cadena de texto en la variable nombre
+
+LEX Encontre:   Identificador  casa
+LEX Encontre:   Operador  =
+LEX Encontre:   Numero  10
+LEX Encontre:   Identificador  cese
+LEX Encontre:   Operador  +
+LEX Encontre:   Identificador  uno
+LEX Encontre:   Metodo_Reservado  constructor()
+LEX Encontre:   Reservadas  leer
+LEX Encontre:   Identificador  nombre
+LEX Encontre:   Final_Linea  ;
+FIN

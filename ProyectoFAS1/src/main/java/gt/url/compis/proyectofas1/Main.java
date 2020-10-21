@@ -23,7 +23,6 @@ import java.util.logging.Logger;
 public class Main {
 
     public static void Escribir(String texto) throws IOException {
-
         File archivo;
         FileWriter escribir;
         PrintWriter linea;
@@ -38,7 +37,6 @@ public class Main {
                 escribir.close();
             } catch (Exception e) {
             }
-
         } else {
             try {
                 escribir = new FileWriter(archivo, true);
@@ -48,8 +46,19 @@ public class Main {
                 escribir.close();
             } catch (Exception e) {
             }
-
         }
+    }
+
+    public static void Escribir2(String texto) throws IOException {
+        try {
+            File archivo = new File("tabla.txt");
+            PrintWriter writer;
+            writer = new PrintWriter(archivo);
+            writer.print(texto);
+            writer.close();
+        } catch (Exception e) {
+        }
+
     }
 
     public static String convertStringArrayToString(String[] strArr, String delimiter) {
@@ -62,6 +71,18 @@ public class Main {
 
     public static void main(String[] args) {
         String codarch = convertStringArrayToString(args, ",");
+        String ide = "";    //identificador
+        String n = "";      //numero
+        String ps = "";     //palabra reservada
+        String simb = "";   //simbolo
+        String fdl = "";    //eof
+        String cm = "";     //comentario
+        String pl = "";     //palabra
+        String fe = "";     //funcion especial
+        String op = "";     //operador
+        String mr = "";     //metodo reservado
+        String tab = "\t\t\t\t----<<<Inicia Tabla>>>----\n";
+
         try {
             Lexico lexer = new Lexico(new InputStreamReader(new FileInputStream(codarch)));
             String resultado = "";
@@ -69,6 +90,17 @@ public class Main {
                 Tokens tokens = lexer.yylex();
                 if (tokens == null) {
                     resultado += "FIN";
+                    tab += "\t->NUMEROS<-\n"+ n + "\n" 
+                            + "\t->PALABRA<-\n"+ pl + "\n" 
+                            + "\t->OPERADOR<-\n"+ op + "\n" 
+                            + "\t->SIMBOLO<-\n"+ simb + "\n" 
+                            + "\t->IDDENTIFICADOR<-\n"+ ide + "\n" 
+                            + "\t->PALABRA RESERVADA<-\n"+ ps + "\n" 
+                            + "\t->FUNCION ESPECIAL<-\n"+ fe + "\n" 
+                            + "\t->METODO RESERVADO<-\n"+ mr + "\n" 
+                            + "\t->COMENTARIOS<-\n\n"+ cm + "\n" 
+                            + "\t->EOF<-\n"+ fdl;
+                    Escribir2(tab);
                     Escribir(resultado);
                     System.out.println(resultado);
                     return;
@@ -78,12 +110,47 @@ public class Main {
                         resultado += "Simbolo no definido\n";
                         break;
                     case Identificador:
-                    case Numero:
-                    case Reservadas:
-                    case Simbolo:
-                    case Final_Linea:
+                        ide += tokens + ":$ " + lexer.lexeme + "\n";
                         resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
                         break;
+                    case Numero:
+                        n += tokens + ":$ " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+                    case Reservadas:
+                        ps += tokens + ":$ " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+                    case Simbolo:
+                        simb += tokens + ":$ " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+                    case Final_Linea:
+                        fdl += tokens + ":$ " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+                    case Comentario:
+                        cm += tokens + ":$ " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+                    case Palabra:
+                        pl += tokens + ":$ " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+                    case Operador:
+                        op += tokens + ":$ " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+                    case Metodo_Reservado:
+                        mr += tokens + ":$ " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+                    case Funcion_Especial:
+                        fe += tokens + ":$ " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+                        break;
+//                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
+//                        break;
                     default:
                         resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
                         break;

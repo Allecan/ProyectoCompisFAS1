@@ -84,7 +84,7 @@ extiende |
 
 while               {lexeme=yytext(); return Reservadas;}
 {L}({L}|{D})*       {lexeme=yytext(); return Identificador;}
-("(-"{D}+")")|{D}+  {lexeme=yytext(); return Numero;}
+[0-9]+("."[0-9]+)?  {lexeme=yytext(); return Numero;}
 {finallinea}        {lexeme=yytext(); return Final_Linea;}
 {simbolo}           {lexeme=yytext(); return Simbolo;}
 {Comentario}        {lexeme=yytext(); return Comentario;}
