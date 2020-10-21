@@ -26,6 +26,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -36,40 +37,36 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form FrmPrincipal
      */
-    
-  
     public Menu() {
-        
+
         initComponents();
+        txtResultado.setLineWrap(true);
+        txtResultado.setWrapStyleWord(true);
         this.setLocationRelativeTo(null);
     }
 
-    public static String PreguntaSiNo(String strMensaje){
+    public static String PreguntaSiNo(String strMensaje) {
         int seleccion = JOptionPane.showOptionDialog(
-            null, 
-            strMensaje, 
-            "Seleccione una opción", 
-            JOptionPane.YES_NO_CANCEL_OPTION,
-            JOptionPane.QUESTION_MESSAGE,
-            null,    
-            new Object[] { "Si", "No"},   
-            "Si");
-        
-        if (seleccion != -1)
-            {
-                if((seleccion + 1)==1)
-                    {
-                    return "SI";
-                    }
-                else
-                    {
-                    return "NO";
-                    }
+                null,
+                strMensaje,
+                "Seleccione una opción",
+                JOptionPane.YES_NO_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                new Object[]{"Si", "No"},
+                "Si");
+
+        if (seleccion != -1) {
+            if ((seleccion + 1) == 1) {
+                return "SI";
+            } else {
+                return "NO";
             }
-    return null;
-    } 
-    
-        public void Escribir(String texto) throws IOException {
+        }
+        return null;
+    }
+
+    public void Escribir(String texto) throws IOException {
 
         File archivo;
         FileWriter escribir;
@@ -98,14 +95,13 @@ public class Menu extends javax.swing.JFrame {
 
         }
     }
-        
-        
-                public void Escribir2(String texto) throws IOException {
+
+    public void Escribir2(String texto) throws IOException {
 
         File archivo;
         FileWriter escribir;
         PrintWriter linea;
-        archivo = new File("codigo.txt");
+        archivo = new File("tablaGraf.txt");
         if (!archivo.exists()) {
             try {
                 archivo.createNewFile();
@@ -129,6 +125,7 @@ public class Menu extends javax.swing.JFrame {
 
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -142,69 +139,57 @@ public class Menu extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtResultado = new javax.swing.JTextArea();
         btnAnalizar1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnAnalizar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnAnalizar.setText("Iniciar Análisis");
+        btnAnalizar.setIcon(new javax.swing.ImageIcon("C:\\Users\\allec\\Documents\\NetBeansProjects\\compis\\ProyectoCompisFAS1\\ProyectoFAS1\\imgs\\internet-and-security-outline-1-04-512.png")); // NOI18N
+        btnAnalizar.setToolTipText("Seleccionar y Analizar archivo");
+        btnAnalizar.setBorder(null);
+        btnAnalizar.setBorderPainted(false);
+        btnAnalizar.setContentAreaFilled(false);
+        btnAnalizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAnalizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAnalizarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAnalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 100, -1));
 
         txtResultado.setColumns(20);
         txtResultado.setRows(5);
         jScrollPane1.setViewportView(txtResultado);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 15, 940, 290));
+
         btnAnalizar1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnAnalizar1.setText("Mostrar Datos");
+        btnAnalizar1.setIcon(new javax.swing.ImageIcon("C:\\Users\\allec\\Documents\\NetBeansProjects\\compis\\ProyectoCompisFAS1\\ProyectoFAS1\\imgs\\21-document-file-paper-eye-view-watch-512.png")); // NOI18N
+        btnAnalizar1.setToolTipText("Ver tabla");
+        btnAnalizar1.setBorder(null);
+        btnAnalizar1.setBorderPainted(false);
+        btnAnalizar1.setContentAreaFilled(false);
+        btnAnalizar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAnalizar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAnalizar1ActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAnalizar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, 80, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 956, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(168, 168, 168)
-                .addComponent(btnAnalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95)
-                .addComponent(btnAnalizar1, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAnalizar1)
-                    .addComponent(btnAnalizar))
-                .addGap(51, 51, 51))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\allec\\Documents\\NetBeansProjects\\compis\\ProyectoCompisFAS1\\ProyectoFAS1\\imgs\\ml-wallpaper-17-mobile.jpg")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAnalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalizarActionPerformed
         // TODO add your handling code here  
-     
-        
+
         JFileChooser chooser = new JFileChooser();
         chooser.showOpenDialog(null);
-        
-       
-       
-       
+
         String ide = "";    //identificador
         String n = "";      //numero
         String ps = "";     //palabra reservada
@@ -216,33 +201,27 @@ public class Menu extends javax.swing.JFrame {
         String op = "";     //operador
         String mr = "";     //metodo reservado
         String tab = "\t\t\t\t----<<<Inicia Tabla>>>----\n";
-        
-        
-        
-        
-            
-       
 
         try {
-               Reader lector = new BufferedReader(new FileReader(chooser.getSelectedFile()));
+            Reader lector = new BufferedReader(new FileReader(chooser.getSelectedFile()));
             Lexico lexer = new Lexico(lector);
             String resultado = "";
             while (true) {
                 Tokens tokens = lexer.yylex();
                 if (tokens == null) {
                     resultado += "FIN";
-                    tab += "\t->NUMEROS<-\n"+ n + "\n" 
-                            + "\t->PALABRA<-\n"+ pl + "\n" 
-                            + "\t->OPERADOR<-\n"+ op + "\n" 
-                            + "\t->SIMBOLO<-\n"+ simb + "\n" 
-                            + "\t->IDDENTIFICADOR<-\n"+ ide + "\n" 
-                            + "\t->PALABRA RESERVADA<-\n"+ ps + "\n" 
-                            + "\t->FUNCION ESPECIAL<-\n"+ fe + "\n" 
-                            + "\t->METODO RESERVADO<-\n"+ mr + "\n" 
-                            + "\t->COMENTARIOS<-\n\n"+ cm + "\n" 
-                            + "\t->EOF<-\n"+ fdl;
+                    tab += "\t->NUMEROS<-\n" + n + "\n"
+                            + "\t->PALABRA<-\n" + pl + "\n"
+                            + "\t->OPERADOR<-\n" + op + "\n"
+                            + "\t->SIMBOLO<-\n" + simb + "\n"
+                            + "\t->IDDENTIFICADOR<-\n" + ide + "\n"
+                            + "\t->PALABRA RESERVADA<-\n" + ps + "\n"
+                            + "\t->FUNCION ESPECIAL<-\n" + fe + "\n"
+                            + "\t->METODO RESERVADO<-\n" + mr + "\n"
+                            + "\t->COMENTARIOS<-\n\n" + cm + "\n"
+                            + "\t->EOF<-\n" + fdl;
                     Escribir2(tab);
-                 //   Escribir(resultado);
+                    //   Escribir(resultado);
                     System.out.println(resultado);
                     return;
                 }
@@ -296,35 +275,35 @@ public class Menu extends javax.swing.JFrame {
                         resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
                         break;
                 }
-               
+
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
 
     }//GEN-LAST:event_btnAnalizarActionPerformed
 
     private void btnAnalizar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalizar1ActionPerformed
-       File archivo = new File("codigo.txt");
+        File archivo = new File("tablaGraf.txt");
         try {
             BufferedReader leer = new BufferedReader(new FileReader(archivo));
-           try {
-               String linea = leer.readLine();
-               while(linea !=null){
-                   txtResultado.append(linea+"\n");
-                   linea = leer.readLine();
-               }
-           } catch (IOException ex) {
-               Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
-           }
+            try {
+                String linea = leer.readLine();
+                while (linea != null) {
+                    txtResultado.append(linea + "\n");
+                    linea = leer.readLine();
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-       
+
+
     }//GEN-LAST:event_btnAnalizar1ActionPerformed
 
     /**
@@ -372,12 +351,9 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAnalizar;
     private javax.swing.JButton btnAnalizar1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txtResultado;
     // End of variables declaration//GEN-END:variables
-
-
-    
-
 
 }

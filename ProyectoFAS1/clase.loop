@@ -1,0 +1,5 @@
+/* area de declaracion de funcion de carga inicial */
+entero Principal()
+HolaMundo hola = nuevo HolaMundo ()
+hola . inicio ()
+devolver 0

@@ -1,0 +1,39 @@
+				----<<<Inicia Tabla>>>----
+	->NUMEROS<-
+Numero:$ 0
+
+	->PALABRA<-
+
+	->OPERADOR<-
+Operador:$ =
+Operador:$ .
+
+	->SIMBOLO<-
+Simbolo:$ (
+Simbolo:$ )
+Simbolo:$ (
+Simbolo:$ )
+
+	->IDDENTIFICADOR<-
+Identificador:$ HolaMundo
+Identificador:$ hola
+Identificador:$ nuevo
+Identificador:$ HolaMundo
+Identificador:$ hola
+Identificador:$ inicio
+
+	->PALABRA RESERVADA<-
+Reservadas:$ entero
+Reservadas:$ devolver
+
+	->FUNCION ESPECIAL<-
+
+	->METODO RESERVADO<-
+Metodo_Reservado:$ Principal()
+
+	->COMENTARIOS<-
+
+Comentario:$ /* area de declaracion de funcion de carga inicial */
+
+	->EOF<-
+
