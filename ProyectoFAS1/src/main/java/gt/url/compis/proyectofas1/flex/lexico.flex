@@ -3,6 +3,7 @@ import static gt.url.compis.proyectofas1.Tokens.*;
 %%
 %class Lexico
 %type Tokens
+
 P= "."
 incr = "++"
 decr = "--"
@@ -18,9 +19,9 @@ FesB = "boleano cadenaAboleano"
 S = "real seno"
 C = "real coseno"
 T = "real tangente"
-L = "real logaritmo"
+Log = "real logaritmo"
 R = "real raiz"
-Fconv = ({S}|{C}|{T}|{L}|{R})
+Fconv = ({S}|{C}|{T}|{Log}|{R})
 pi = "("
 pd = ")"
 espc = " "
@@ -49,7 +50,9 @@ espacio=[ ,\t,\r,\n]+
 %{
     public String lexeme;
 %}
+
 %%
+
 si |
 entonces |
 devolver |
@@ -78,20 +81,21 @@ hacer |
 incrementar |
 decrementar |
 extiende |
-while {lexeme=yytext(); return Reservadas;}
-{L}({L}|{D})* {lexeme=yytext(); return Identificador;}
-("(-"{D}+")")|{D}+ {lexeme=yytext(); return Numero;}
-{finallinea} {lexeme=yytext(); return Final_Linea;}
-{simbolo} {lexeme=yytext(); return Simbolo;}
-{Comentario}  {lexeme=yytext(); return Comentario;}
-{palabra}       {lexeme=yytext(); return Palabra;}
-{Op}            {lexeme=yytext(); return Operador;}
-{MetRes}        {lexeme=yytext(); return Metodo_Reservado;}
-{FuncES}        {lexeme=yytext(); return Funcion_Especial;}
-{NoIdes}        {lexeme=yytext(); return No_Ides;}   
-{espacio} {/*Ignore*/}
-"//".* {/*Ignore*/}
- . {return ERROR;}
+
+while               {lexeme=yytext(); return Reservadas;}
+{L}({L}|{D})*       {lexeme=yytext(); return Identificador;}
+("(-"{D}+")")|{D}+  {lexeme=yytext(); return Numero;}
+{finallinea}        {lexeme=yytext(); return Final_Linea;}
+{simbolo}           {lexeme=yytext(); return Simbolo;}
+{Comentario}        {lexeme=yytext(); return Comentario;}
+{palabra}           {lexeme=yytext(); return Palabra;}
+{Op}                {lexeme=yytext(); return Operador;}
+{MetRes}            {lexeme=yytext(); return Metodo_Reservado;}
+{FuncES}            {lexeme=yytext(); return Funcion_Especial;}
+{NoIdes}            {lexeme=yytext(); return No_Ides;}   
+{espacio}           {/*Ignore*/}
+"//".*              {/*Ignore*/}
+ .                  {return ERROR;}
 
 
 

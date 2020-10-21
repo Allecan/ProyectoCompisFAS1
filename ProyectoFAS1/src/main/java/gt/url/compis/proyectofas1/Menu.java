@@ -134,10 +134,10 @@ public class Menu extends javax.swing.JFrame {
                         resultado += "Simbolo no definido\n";
                         break;
                     case Identificador: case Numero: case Reservadas: case Simbolo: case Final_Linea:
-                        resultado += "Encontre un/a:   " + tokens + "  " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
                         break;
                     default:
-                        resultado += "Encontre un/a:   " + tokens + "  " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
                         break;
                 }
             }

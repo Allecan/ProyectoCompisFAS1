@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package gt.url.compis.proyectofas1;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,22 +15,19 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.Reader;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
-
-  
-
 public class Main {
-    
+
     public static void Escribir(String texto) throws IOException {
 
         File archivo;
         FileWriter escribir;
         PrintWriter linea;
-        archivo = new File("codigo.txt");
+        archivo = new File("tokens.txt");
         if (!archivo.exists()) {
             try {
                 archivo.createNewFile();
@@ -54,35 +52,18 @@ public class Main {
         }
     }
 
-  
-    public static void main(String[] args) {
-        
-        
-        Scanner in = new Scanner(System.in);
-        String input = "";
-        String texto = "";
-        String fin = "end";
-        System.out.println("Escriba su codigo: ");
-
-        System.out.println(input);
-        while (input != "end") {
-
-            if (input.equals("end")) {
-                break;
-            } else {
-                input = in.nextLine();
-                texto = texto + "\n" + input;
-
-            }
+    public static String convertStringArrayToString(String[] strArr, String delimiter) {
+        StringBuilder sb = new StringBuilder();
+        for (String str : strArr) {
+            sb.append(str).append(delimiter);
         }
+        return sb.substring(0, sb.length() - 1);
+    }
 
+    public static void main(String[] args) {
+        String codarch = convertStringArrayToString(args, ",");
         try {
-            File archivo = new File("codigo.loop");
-            PrintWriter writer;
-            writer = new PrintWriter(archivo);
-            writer.print(texto);
-            writer.close();
-            Lexico lexer = new Lexico(new InputStreamReader(new FileInputStream("codigo.loop")));
+            Lexico lexer = new Lexico(new InputStreamReader(new FileInputStream(codarch)));
             String resultado = "";
             while (true) {
                 Tokens tokens = lexer.yylex();
@@ -96,11 +77,15 @@ public class Main {
                     case ERROR:
                         resultado += "Simbolo no definido\n";
                         break;
-                    case Identificador: case Numero: case Reservadas: case Simbolo: case Final_Linea:
-                        resultado += "Encontre un/a:   " + tokens + "  " + lexer.lexeme + "\n";
+                    case Identificador:
+                    case Numero:
+                    case Reservadas:
+                    case Simbolo:
+                    case Final_Linea:
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
                         break;
                     default:
-                        resultado += "Encontre un/a:   " + tokens + "  " + lexer.lexeme + "\n";
+                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
                         break;
                 }
             }
