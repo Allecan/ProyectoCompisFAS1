@@ -177,8 +177,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnAnalizar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, 80, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\allec\\Documents\\NetBeansProjects\\compis\\ProyectoCompisFAS1\\ProyectoFAS1\\imgs\\ml-wallpaper-17-mobile.jpg")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 430));
 
         pack();
