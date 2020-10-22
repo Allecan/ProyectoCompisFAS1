@@ -145,10 +145,9 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnAnalizar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnAnalizar.setIcon(new javax.swing.ImageIcon("C:\\Users\\allec\\Documents\\NetBeansProjects\\compis\\ProyectoCompisFAS1\\ProyectoFAS1\\imgs\\internet-and-security-outline-1-04-512.png")); // NOI18N
+        btnAnalizar.setText("Analizar");
         btnAnalizar.setToolTipText("Seleccionar y Analizar archivo");
-        btnAnalizar.setBorder(null);
-        btnAnalizar.setBorderPainted(false);
+        btnAnalizar.setBorder(new javax.swing.border.MatteBorder(null));
         btnAnalizar.setContentAreaFilled(false);
         btnAnalizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAnalizar.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +155,7 @@ public class Menu extends javax.swing.JFrame {
                 btnAnalizarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAnalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 100, -1));
+        getContentPane().add(btnAnalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 150, 50));
 
         txtResultado.setColumns(20);
         txtResultado.setRows(5);
@@ -165,10 +164,9 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 15, 940, 290));
 
         btnAnalizar1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnAnalizar1.setIcon(new javax.swing.ImageIcon("C:\\Users\\allec\\Documents\\NetBeansProjects\\compis\\ProyectoCompisFAS1\\ProyectoFAS1\\imgs\\21-document-file-paper-eye-view-watch-512.png")); // NOI18N
+        btnAnalizar1.setText("Mostrar");
         btnAnalizar1.setToolTipText("Ver tabla");
-        btnAnalizar1.setBorder(null);
-        btnAnalizar1.setBorderPainted(false);
+        btnAnalizar1.setBorder(new javax.swing.border.MatteBorder(null));
         btnAnalizar1.setContentAreaFilled(false);
         btnAnalizar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAnalizar1.addActionListener(new java.awt.event.ActionListener() {
@@ -176,8 +174,10 @@ public class Menu extends javax.swing.JFrame {
                 btnAnalizar1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAnalizar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, 80, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 430));
+        getContentPane().add(btnAnalizar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 340, 150, 50));
+
+        jLabel1.setBackground(new java.awt.Color(0, 204, 255));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 10, 970, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -208,6 +208,7 @@ public class Menu extends javax.swing.JFrame {
                 Tokens tokens = lexer.yylex();
                 if (tokens == null) {
                     resultado += "FIN";
+                    JOptionPane.showMessageDialog(null, "Análisis Completado :D");
                     tab += "\t->NUMEROS<-\n" + n + "\n"
                             + "\t->PALABRA<-\n" + pl + "\n"
                             + "\t->OPERADOR<-\n" + op + "\n"
@@ -274,18 +275,22 @@ public class Menu extends javax.swing.JFrame {
                         break;
                 }
 
-            }
+            } 
+             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+       
 
 
     }//GEN-LAST:event_btnAnalizarActionPerformed
 
     private void btnAnalizar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalizar1ActionPerformed
         File archivo = new File("tablaGraf.txt");
+        txtResultado.setText(null);
         try {
             BufferedReader leer = new BufferedReader(new FileReader(archivo));
             try {
