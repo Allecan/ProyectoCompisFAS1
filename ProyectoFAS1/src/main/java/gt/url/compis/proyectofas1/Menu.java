@@ -5,9 +5,9 @@
  */
 package gt.url.compis.proyectofas1;
 
-import static gt.url.compis.proyectofas1.Main.Escribir;
+//import static gt.url.compis.proyectofas1.Main.Escribir;
 import static gt.url.compis.proyectofas1.Main.Escribir2;
-import static gt.url.compis.proyectofas1.Main.convertStringArrayToString;
+//import static gt.url.compis.proyectofas1.Main.convertStringArrayToString;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.io.BufferedReader;

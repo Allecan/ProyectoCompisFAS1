@@ -22,35 +22,8 @@ import java.util.logging.Logger;
 
 public class Main {
 
-    public static void Escribir(String texto) throws IOException {
-        File archivo;
-        FileWriter escribir;
-        PrintWriter linea;
-        archivo = new File("tokens.txt");
-        if (!archivo.exists()) {
-            try {
-                archivo.createNewFile();
-                escribir = new FileWriter(archivo, true);
-                linea = new PrintWriter(escribir);
-                linea.println(texto);
-                linea.close();
-                escribir.close();
-            } catch (Exception e) {
-            }
-        } else {
-            try {
-                escribir = new FileWriter(archivo, true);
-                linea = new PrintWriter(escribir);
-                linea.println(texto);
-                linea.close();
-                escribir.close();
-            } catch (Exception e) {
-            }
-        }
-    }
-
     public static void Escribir2(String texto) throws IOException {
-        try {
+        try {            
             File archivo = new File("tabla.txt");
             PrintWriter writer;
             writer = new PrintWriter(archivo);
@@ -61,16 +34,8 @@ public class Main {
 
     }
 
-    public static String convertStringArrayToString(String[] strArr, String delimiter) {
-        StringBuilder sb = new StringBuilder();
-        for (String str : strArr) {
-            sb.append(str).append(delimiter);
-        }
-        return sb.substring(0, sb.length() - 1);
-    }
-
-    public static void main(String[] args) {
-        String codarch = convertStringArrayToString(args, ",");
+    public static String analisis(String archivo) {
+        String tab = "";
         String ide = "";    //identificador
         String n = "";      //numero
         String ps = "";     //palabra reservada
@@ -81,29 +46,25 @@ public class Main {
         String fe = "";     //funcion especial
         String op = "";     //operador
         String mr = "";     //metodo reservado
-        String tab = "\t\t\t\t----<<<Inicia Tabla>>>----\n";
 
         try {
-            Lexico lexer = new Lexico(new InputStreamReader(new FileInputStream(codarch)));
+            Lexico lexer = new Lexico(new InputStreamReader(new FileInputStream(archivo)));
             String resultado = "";
             while (true) {
                 Tokens tokens = lexer.yylex();
                 if (tokens == null) {
                     resultado += "FIN";
-                    tab += "\t->NUMEROS<-\n"+ n + "\n" 
-                            + "\t->PALABRA<-\n"+ pl + "\n" 
-                            + "\t->OPERADOR<-\n"+ op + "\n" 
-                            + "\t->SIMBOLO<-\n"+ simb + "\n" 
-                            + "\t->IDDENTIFICADOR<-\n"+ ide + "\n" 
-                            + "\t->PALABRA RESERVADA<-\n"+ ps + "\n" 
-                            + "\t->FUNCION ESPECIAL<-\n"+ fe + "\n" 
-                            + "\t->METODO RESERVADO<-\n"+ mr + "\n" 
-                            + "\t->COMENTARIOS<-\n\n"+ cm + "\n" 
-                            + "\t->EOF<-\n"+ fdl;
-                    Escribir2(tab);
-                    Escribir(resultado);
-                    System.out.println(resultado);
-                    return;
+                    tab += "\t->NUMEROS<-\n" + n + "\n"
+                            + "\t->PALABRA<-\n" + pl + "\n"
+                            + "\t->OPERADOR<-\n" + op + "\n"
+                            + "\t->SIMBOLO<-\n" + simb + "\n"
+                            + "\t->IDENTIFICADOR<-\n" + ide + "\n"
+                            + "\t->PALABRA RESERVADA<-\n" + ps + "\n"
+                            + "\t->FUNCION ESPECIAL<-\n" + fe + "\n"
+                            + "\t->METODO RESERVADO<-\n" + mr + "\n"
+                            + "\t->COMENTARIOS<-\n\n" + cm + "\n"
+                            + "\t->EOF<-\n" + fdl + "\nFIN de: "+archivo+"\n\n";                    
+                    return tab;
                 }
                 switch (tokens) {
                     case ERROR:
@@ -149,8 +110,6 @@ public class Main {
                         fe += tokens + ":$ " + lexer.lexeme + "\n";
                         resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
                         break;
-//                        resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
-//                        break;
                     default:
                         resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
                         break;
@@ -161,5 +120,19 @@ public class Main {
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return "";
+    }
+
+    public static void main(String[] args) throws IOException {
+        String codarch = "";
+
+        String finalt = "\t\t\t\t----<<<Inicia Tabla>>>----\n";
+        for (int i = 0; i < args.length; i++) {
+            codarch = args[i];
+            finalt += analisis(codarch);
+           
+        }
+        System.out.println("Analisis completado");
+        Escribir2(finalt);
     }
 }
