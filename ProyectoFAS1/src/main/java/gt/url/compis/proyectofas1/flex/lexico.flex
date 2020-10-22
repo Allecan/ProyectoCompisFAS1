@@ -3,6 +3,10 @@ import static gt.url.compis.proyectofas1.Tokens.*;
 %%
 %class Lexico
 %type Tokens
+%line
+%{
+    public String lexeme;
+%}
 
 P= "."
 incr = "++"
@@ -47,9 +51,6 @@ palabra = "\"" {entrada}* {terminacion}?
 L=[a-zA-Z_]+
 D=[0-9]+
 espacio=[ ,\t,\r,\n]+
-%{
-    public String lexeme;
-%}
 
 %%
 
@@ -92,7 +93,7 @@ while               {lexeme=yytext(); return Reservadas;}
 {Op}                {lexeme=yytext(); return Operador;}
 {MetRes}            {lexeme=yytext(); return Metodo_Reservado;}
 {FuncES}            {lexeme=yytext(); return Funcion_Especial;}
-{NoIdes}            {lexeme=yytext(); return No_Ides;}   
+{NoIdes}            {lexeme=yytext() + " Linea: " + yyline; return No_Ides;}   
 {espacio}           {/*Ignore*/}
 "//".*              {/*Ignore*/}
  .                  {return ERROR;}

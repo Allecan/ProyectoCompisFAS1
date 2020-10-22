@@ -110,6 +110,11 @@ public class Main {
                         fe += tokens + ":$ " + lexer.lexeme + "\n";
                         resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
                         break;
+                    case No_Ides:
+                        String err = "LEXERROR:   " + tokens + "  " + lexer.lexeme + "\n";
+                        System.out.println(err);
+                        System.exit(0);
+                        break;
                     default:
                         resultado += "LEX Encontre:   " + tokens + "  " + lexer.lexeme + "\n";
                         break;
@@ -133,6 +138,7 @@ public class Main {
            
         }
         System.out.println("Analisis completado");
+        System.out.println("ARCHIVO GUARDADO EN: tabla.txt");
         Escribir2(finalt);
     }
 }
