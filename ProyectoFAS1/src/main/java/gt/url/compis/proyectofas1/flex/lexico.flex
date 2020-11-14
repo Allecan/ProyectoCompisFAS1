@@ -8,49 +8,60 @@ import static gt.url.compis.proyectofas1.Tokens.*;
     public String lexeme;
 %}
 
-P= "."
-incr = "++"
-decr = "--"
-pot = "^"
-dig = "=="
-neg = "!="
-ig            = "="
-log           = (AND|OR)
-Ides = ([a-zA-z]+)([0-9]+)?
-FesR = "real cadenaAreal"
-FesI = "entero cadenaAentero"
-FesB = "boleano cadenaAboleano"
-S = "real seno"
-C = "real coseno"
-T = "real tangente"
-Log = "real logaritmo"
-R = "real raiz"
-Fconv = ({S}|{C}|{T}|{Log}|{R})
-pi = "("
-pd = ")"
-espc = " "
-c = "cadena"
-r = "real"
-Cas = {pi}{c}{espc}{Ides}{pd}
-Car = {pi}{r}{espc}{Ides}{pd} 
-NumerosREAL = (-?)([1-9][0-9]*{P}[0-9]+((E(-?)[1-9][0-9]*))?)
-Op = {pot}|([<|>|=|%|*|/|+|-])|{incr}|{decr}|{P}|{dig}|{neg}|{ig}|{log}
-MetRes = (constructor|destructor|Principal)(\(\))
-FuncES = (({FesR}|{FesI}|{FesB}){Cas})|({Fconv}{Car})
-finallinea = ";"
-simbolo = "\)"|"\("|"\}"|"\{"|"\]"|"\["|","|":"
- Comentario    = {comentario1} | {comentario2} | {comentario3}
- entrada       = [^\r\n]
- terminacion   = \r|\n|\r\n
- comentario1   = "/*" [^*] ~"*/" | "/*" "*"+ "/"
- comentario2   = "//" {entrada}* {terminacion}?
- comentario3   = "/**" {contenido} "*"+ "/"
- contenido     = ( [^*] | \*+ [^/*] )*
+/*NO TOKENS*/
+let            = [:jletter:]+                                                   /*Letras o palabras incluido el guion*/
+letdig         = [:jletterdigit:]+                                              /*Letras con digitos */    
+lqs            = .*                                                             /*Cualquier caracter excepto \n*/
+com            = \"
+entrada        = [^\r\n]
+contenido      = ( [^*] | \*+ [^/*] )*
+terminacion    = \r|\n|\r\n
+ctipo1         = "/*" [^*] ~"*/" | "/*" "*"+ "/"                                /*tipo 1 de comentario*/
+ctipo2         = "//" {entrada}* {terminacion}?                                 /*tipo 2 de comentario*/
+ctipo3         = "/**" {contenido} "*"+ "/"                                     /*tipo 3 de comentario*/    
+
+COMENTARIO     = {ctipo1} | {ctipo2} | {ctipo3}
+
+
+/*TOKENS*/
+SPC             = [ \t\f]                                                       /*Identacion o espacio blanco*/
+P               = "."
+INCR            = "++"
+DECR            = "--"
+POT             = "^"
+EQ              = "="
+EQEQ            = "=="
+NEQ             = "!="
+MYQ             = ">"
+MNQ             = "<"
+PIZ             = "("
+PDR             = ")"
+FLC             = ";"                                                           /*Final de linea con ;*/
+F               = \n                                                            /*Fin de linea*/
+OLOG            = (AND|OR|NOT)
+MetRes          = (constructor|destructor|Principal)                            /*metodos reservados*/
+INT             = "entero"
+STRING          = "cadena"
+BOOL            = "boleano"
+FLOAT           = "real"
+NBOOL           = 1|0
+NUM             = 0|(-?)[1-9][0-9]* 
+
+
+NUMR            = (-?)[0-9]+{P}[0-9]+                                           /*Numeros reales*/
+IDEN            = {let}({NUM}?{let}?)*                              
+CADTXT          = {com}({let}|{SPC}|{letdig}|{lqs})*{com}                       /*Cadenas de texto*/
+FcF             = {FLOAT}{SPC}"cadenaAreal"                                     /*Funciones especiales*/
+FcI             = {INT}{SPC}"cadenaAentero"
+FcB             = {BOOL}{SPC}"cadenaAboleano"
+SEN             = {FLOAT}{SPC}"seno"
+COS             = {FLOAT}{SPC}"coseno"
+TAN             = {FLOAT}{SPC}"tangente"
+LOG             = {FLOAT}{SPC}"logaritmo"
+SQRT            = {FLOAT}{SPC}"raiz"                                            /*Funciones especiales*/
+
+/*ERRORES TOKENS*/
 NoIdes = ([0-9]+)([a-zA-z]+)([0-9]+)?
-palabra = "\"" {entrada}* {terminacion}?
-L=[a-zA-Z_]+
-D=[0-9]+
-espacio=[ ,\t,\r,\n]+
 
 %%
 
@@ -68,11 +79,6 @@ privados |
 protegidas |
 protegidos |
 instanciar |
-entero |
-real |
-cadena |
-boleano |
-nulo |
 incluir |
 leer |
 escribir |
@@ -84,21 +90,19 @@ decrementar |
 extiende |
 
 while               {lexeme=yytext(); return Reservadas;}
-{L}({L}|{D})*       {lexeme=yytext(); return Identificador;}
-[0-9]+("."[0-9]+)?  {lexeme=yytext(); return Numero;}
+{IDEN}              {lexeme=yytext(); return Identificador;}
+{NUM}               {lexeme=yytext(); return Numero;}
 {finallinea}        {lexeme=yytext(); return Final_Linea;}
-{simbolo}           {lexeme=yytext(); return Simbolo;}
-{Comentario}        {lexeme=yytext(); return Comentario;}
-{palabra}           {lexeme=yytext(); return Palabra;}
-{Op}                {lexeme=yytext(); return Operador;}
+
+{CADTXT}           {lexeme=yytext(); return Palabra;}                           /*CAMBIAR en tokens y main*/
+
 {MetRes}            {lexeme=yytext(); return Metodo_Reservado;}
-{FuncES}            {lexeme=yytext(); return Funcion_Especial;}
+
 {NoIdes}            {lexeme=yytext() + " Linea: " + yyline; return No_Ides;}   
-{espacio}           {/*Ignore*/}
+
+{COMENTARIO}        {/*Ignore*/}                                                /*QUITARLO DE TOKENS y MAIN*/
+{SPC}               {/*Ignore*/}
 "//".*              {/*Ignore*/}
  .                  {return ERROR;}
 
-
-
-
-
+/*QUITAR simbolos, operadores, FuncEs y palabras reservadas de TOKENS y MAIN*/
