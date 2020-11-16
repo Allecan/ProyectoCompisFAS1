@@ -1,4 +1,4 @@
-package gt.url.compis.mavenproject1;
+package gt.url.compis.proyectofas1;
 
 terminal Integer NUM;
 terminal COMA;

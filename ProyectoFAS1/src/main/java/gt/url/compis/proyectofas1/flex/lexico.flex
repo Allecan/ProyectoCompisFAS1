@@ -1,9 +1,12 @@
 package gt.url.compis.proyectofas1;
-import static gt.url.compis.proyectofas1.Tokens.*;
+import static gt.url.compis.proyectofas1.Tokens.*;   /*Quitar?xd*/
+import java_cup.runtime.Symbol;
+
 %%
-%class Lexico
-%type Tokens
+%class Lexico 
+%type Tokens   /*Quitar?xd*/
 %line
+/*aqui va el %cup*/
 
 %{
     public String lexeme;

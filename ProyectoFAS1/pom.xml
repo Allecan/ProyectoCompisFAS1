@@ -31,6 +31,27 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>com.github.vbmacher</groupId>
+                <artifactId>cup-maven-plugin</artifactId>
+                <version>11b-20160615</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>                
+                <configuration>
+                    <className>Sintactico</className>
+                    <symbolsName>sym</symbolsName>
+                    <cupDefinition>src/main/java/gt/url/compis/proyectofas1/cup/sint.cup</cupDefinition>
+                    <outputDirectory>src/main/java</outputDirectory>
+                    <noSummary>false</noSummary>
+                    <progress>true</progress>
+                    <debug>true</debug>
+                </configuration>                
+            </plugin>
         </plugins>
     </build>
     <dependencies>

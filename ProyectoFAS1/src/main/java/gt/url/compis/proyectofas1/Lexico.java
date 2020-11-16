@@ -3,7 +3,9 @@
 // source: src/main/java/gt/url/compis/proyectofas1/flex/lexico.flex
 
 package gt.url.compis.proyectofas1;
-import static gt.url.compis.proyectofas1.Tokens.*;
+import static gt.url.compis.proyectofas1.Tokens.*;   /*Quitar?xd*/
+import java_cup.runtime.Symbol;
+
 
 // See https://github.com/jflex-de/jflex/issues/222
 @SuppressWarnings("FallThrough")
