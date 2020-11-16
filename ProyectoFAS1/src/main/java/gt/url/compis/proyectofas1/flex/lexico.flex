@@ -4,6 +4,7 @@ import static gt.url.compis.proyectofas1.Tokens.*;
 %class Lexico
 %type Tokens
 %line
+
 %{
     public String lexeme;
 %}
@@ -12,6 +13,7 @@ import static gt.url.compis.proyectofas1.Tokens.*;
 let            = [:jletter:]+                                                   /*Letras o palabras incluido el guion*/
 letdig         = [:jletterdigit:]+                                              /*Letras con digitos */    
 lqs            = .*                                                             /*Cualquier caracter excepto \n*/
+lqs2           = [\\!\\\"\\#\\$\\%\\&\\'\\(\\)\\*\\+\\,\\-\\.\\/\\:\\;\\<\\>\\=\\?\\@\\[\\]\\{\\}\\`\\~\\|]+  
 com            = \"
 entrada        = [^\r\n]
 contenido      = ( [^*] | \*+ [^/*] )*
@@ -24,7 +26,7 @@ COMENTARIO     = {ctipo1} | {ctipo2} | {ctipo3}
 
 
 /*TOKENS*/
-SPC             = [ \t\f]                                                       /*Identacion o espacio blanco*/
+SPC             = [ \t\f]+                                                       /*Identacion o espacio blanco*/
 P               = "."
 INCR            = "++"
 DECR            = "--"
@@ -44,9 +46,31 @@ INT             = "entero"
 STRING          = "cadena"
 BOOL            = "boleano"
 FLOAT           = "real"
+IMP             = "incluir"
+IF              = "si"
+THN             = "entonces"
+ELS             = "sino"
+RETN            = "devolver"
+CL              = "clase"
+CLEX            = "extiende"
+CLPR            = "propiedades"
+CLPRPU          = "publicas"
+CLPRPT          = "protegidas"
+CLPRPV          = "privadas"
+CLMT            = "metodos"
+CLMTPU          = "publicos"
+CLMTPT          = "protegidos"
+CLMTPV          = "privados"
+CLIN            = "instanciar"
+FRD             = "desde"
+FRM             = "mientras"
+FRH             = "hacer"
+FRINC           = "incrementar"
+FRDEC           = "decrementar"
+RD              = "leer"
+WT              = "escribir"
 NBOOL           = 1|0
 NUM             = 0|(-?)[1-9][0-9]* 
-
 
 NUMR            = (-?)[0-9]+{P}[0-9]+                                           /*Numeros reales*/
 IDEN            = {let}({NUM}?{let}?)*                              
@@ -61,48 +85,17 @@ LOG             = {FLOAT}{SPC}"logaritmo"
 SQRT            = {FLOAT}{SPC}"raiz"                                            /*Funciones especiales*/
 
 /*ERRORES TOKENS*/
-NoIdes = ([0-9]+)([a-zA-z]+)([0-9]+)?
+NoIdes = ({lqs2}|{NUM}){IDEN} | {IDEN}{lqs2}
 
 %%
 
-si |
-entonces |
-devolver |
-sino |
-clase |
-propiedades |
-metodos |
-publicas |
-publicos |
-privadas |
-privados |
-protegidas |
-protegidos |
-instanciar |
-incluir |
-leer |
-escribir |
-desde |
-mientras |
-hacer |
-incrementar |
-decrementar |
-extiende |
-
-while               {lexeme=yytext(); return Reservadas;}
 {IDEN}              {lexeme=yytext(); return Identificador;}
 {NUM}               {lexeme=yytext(); return Numero;}
-{finallinea}        {lexeme=yytext(); return Final_Linea;}
-
-{CADTXT}           {lexeme=yytext(); return Palabra;}                           /*CAMBIAR en tokens y main*/
-
+{FLC}        {lexeme=yytext(); return Final_Linea;}
+{CADTXT}           {lexeme=yytext(); return Palabra;}                           
 {MetRes}            {lexeme=yytext(); return Metodo_Reservado;}
 
-{NoIdes}            {lexeme=yytext() + " Linea: " + yyline; return No_Ides;}   
-
-{COMENTARIO}        {/*Ignore*/}                                                /*QUITARLO DE TOKENS y MAIN*/
-{SPC}               {/*Ignore*/}
-"//".*              {/*Ignore*/}
+{NoIdes}            {/*Ignore*/}   
+{COMENTARIO}        {/*Ignore*/}                                                
+ "//".*              {/*Ignore*/} 
  .                  {return ERROR;}
-
-/*QUITAR simbolos, operadores, FuncEs y palabras reservadas de TOKENS y MAIN*/
